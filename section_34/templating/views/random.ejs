@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+
+<body>
+    <h1>
+        Random num: <%= rand %>
+    </h1>
+
+    <% if (rand % 2 === 0){ %>
+        <h2>Even number</h2>
+    <% } else { %>
+        <h2>Odd number</h2>
+    <% } %>
+
+    <h2><%= rand < 5 ? 'Less than 5' : 'Greater than or equal to 5' %></h2>
+</body>
+
+</html>
