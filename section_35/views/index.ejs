@@ -1,0 +1,16 @@
+<%- include('partials/head', {baseUrl}) %>
+
+<br>
+<a href="<%= baseUrl %>/new">Create a New Comment</a>
+<h1>Comments</h1>
+<ul>
+    <% for (let c of comments){ %>
+    <li>
+        <a href="<%= baseUrl %>/<%= c.id %>">
+            <%= c.text %> - <b><%= c.username %></b>
+        </a>
+    </li>
+    <% } %>
+</ul>
+
+<%- include('partials/foot') %>

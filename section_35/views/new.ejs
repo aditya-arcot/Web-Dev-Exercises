@@ -1,0 +1,15 @@
+<%- include('partials/head', {baseUrl}) %>
+
+<h1>Make a New Commment</h1>
+
+<%- include('partials/form', {
+    action:baseUrl,
+    inputText:"Enter Your Username",
+    inputValue:"",
+    inputDisabled:false,
+    textareaText:"Enter Some Text",
+    textareaValue:"",
+    buttonText:"Submit"
+}) %>
+
+<%- include('partials/foot') %>

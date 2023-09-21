@@ -1,0 +1,15 @@
+<%- include('partials/head', {baseUrl}) %>
+
+<h1>Edit Comment</h1>
+
+<%- include('partials/form', {
+    action:`${baseUrl}/${comment.id}?_method=PATCH`,
+    inputText:"Username",
+    inputValue:comment.username,
+    inputDisabled:true,
+    textareaText:"Modify Text",
+    textareaValue:comment.text,
+    buttonText:"Update"
+}) %>
+
+<%- include('partials/foot') %>

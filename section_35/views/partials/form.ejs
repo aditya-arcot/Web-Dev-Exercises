@@ -1,0 +1,15 @@
+<form action="<%= action %>" method="post">
+    <section>
+        <label for="username"><%= inputText %></label>
+        <br>
+        <input type="text" id="username" placeholder="username" name="username"
+                value="<%= inputValue %>" <%= inputDisabled ? "disabled" : "" %>>
+    </section>
+    <section>
+        <label for="text"><%= textareaText %></label>
+        <br>
+        <textarea id="text" name="text" cols="30" rows="5" 
+                    placeholder="text"><%= textareaValue %></textarea>
+    </section>
+    <button><%= buttonText %></button>
+</form>

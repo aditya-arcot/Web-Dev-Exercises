@@ -1,0 +1,16 @@
+<%- include('partials/head', {baseUrl}) %>
+
+<h2><%= comment.text %> - <%= comment.username %></h2>
+<button id="edit">Edit</button>
+<br>
+<form action="<%= baseUrl %>/<%= comment.id %>?_method=DELETE" method="post">
+    <button>Delete</button>
+</form>
+
+<script>
+    document.getElementById('edit').addEventListener('click', () => {
+        window.location.href = "<%= baseUrl %>/<%= comment.id %>/edit"
+    })
+</script>
+
+<%- include('partials/foot') %>
