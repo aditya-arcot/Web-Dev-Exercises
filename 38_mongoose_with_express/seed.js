@@ -45,5 +45,8 @@ const seedProducts = [
 ]
 
 Product.insertMany(seedProducts)
-    .then(res => console.log(res))
+    .then(res => {
+        console.log(res)
+        mongoose.connection.close()
+    })
     .catch(err => console.log(err))

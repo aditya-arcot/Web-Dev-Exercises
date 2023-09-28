@@ -43,7 +43,7 @@ app.get(baseUrl, async (req, res) => {
         { title: 'Products Index', headingStart, baseUrl, products })
 })
 
-app.get(path.join(baseUrl, 'new'), async (req, res) => {
+app.get(path.join(baseUrl, 'new'), (req, res) => {
     res.render(path.join(viewsPath, 'new'),
         { title: 'New Product', baseUrl, categories })
 })
