@@ -1,0 +1,25 @@
+<%- include('partials/head') %>
+
+<h1><%= product.name %></h1>
+<ul>
+    <li>Price: $<%= product.price %></li>
+    <li>Category:
+        <a href="<%= baseUrl %>?category=<%= product.category %>">
+            <%= product.category %>
+        </a>
+    </li>
+</ul>
+
+<form action="<%= baseUrl %>/<%= product._id %>/edit">
+    <button>Edit</button>
+</form>
+
+<form action="<%= baseUrl %>/<%= product._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+
+<form action="<%= baseUrl %>">
+    <button>All Products</button>
+</form>
+
+<%- include('partials/foot') %>
