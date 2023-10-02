@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+
+<h1><%= headingStart %> Products</h1>
+
+<ul>
+    <% for(let product of products){ %>
+    <li>
+        <a href="/products/<%= product._id %>">
+            <%= product.name %>
+        </a>
+    </li>
+    <% } %>
+</ul>
+
+<form action="/products/new">
+    <button>New Product</button>
+</form>
+
+<% if (headingStart !== 'All') {%>
+<form action="/products">
+    <button>All Products</button>
+</form>
+<% } %>
+
+<%- include('../partials/foot') %>

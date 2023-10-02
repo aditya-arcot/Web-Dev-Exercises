@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+
+<h1>All Farms</h1>
+
+<ul>
+    <% for(let farm of farms){ %>
+    <li>
+        <a href="/farms/<%= farm._id %>"><%= farm.name %></a>
+    </li>
+    <% } %>
+</ul>
+
+<form action="/farms/new">
+    <button>New Farm</button>
+</form>
+
+<%- include('../partials/foot') %>

@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+
+<h1>Add a Product</h1>
+<% if (typeof farm !== 'undefined') { %>
+<h2><%= farm.name %></h2>
+<% } %>
+
+<form action="<%= typeof farm !== 'undefined' ? `/farms/${farm._id}` : "" %>/products" method="POST">
+    <label for="name">Product Name</label>
+    <input type="text" name="name" id="name" placeholder="product name">
+
+    <label for="price">Unit Price</label>
+    <input type="number" name="price" id="price" placeholder="product price">
+
+    <label for="category">Select Category</label>
+    <select name="category" id="category">
+        <% for (let category of categories) { %>
+        <option value="<%= category %>"><%= category %></option>
+        <% } %>
+    </select>
+
+    <button>Submit</button>
+</form>
+
+<% if (typeof farm !== 'undefined') { %>
+<form action="/farms/<%= farm._id %>">
+    <button>Back to Farm</button>
+</form>
+<% } %>
+
+<form action="/products">
+    <button>All Products</button>
+</form>
+
+<%- include('../partials/foot') %>

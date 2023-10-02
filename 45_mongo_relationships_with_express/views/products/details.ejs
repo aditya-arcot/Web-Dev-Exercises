@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+
+<h1><%= product.name %></h1>
+<ul>
+    <li>Price: $<%= product.price %></li>
+    <li>Category:
+        <a href="/products?category=<%= product.category %>">
+            <%= product.category %>
+        </a>
+    </li>
+    <% if (typeof product.farm !== 'undefined') { %>
+    <li>
+        Farm: <a href="/farms/<%= product.farm._id %>"><%= product.farm.name %></a>
+    </li>
+    <% } %>
+</ul>
+
+<form action="/products/<%= product._id %>/edit">
+    <button>Edit</button>
+</form>
+
+<form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+
+<form action="/products">
+    <button>All Products</button>
+</form>
+
+<%- include('../partials/foot') %>
