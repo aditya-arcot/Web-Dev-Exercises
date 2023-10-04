@@ -5,7 +5,7 @@ const session = require('express-session')
 app.use(session({
     secret: 'secretgoeshere',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }))
 
 app.get('/viewcount', (req, res) => {

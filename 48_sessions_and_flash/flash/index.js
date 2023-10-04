@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 app.use(session({
     secret: 'thisisnotagoodsecret',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }))
 app.use(flash())
 app.use(express.urlencoded({ extended: true }))
